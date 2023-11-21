@@ -11,6 +11,7 @@ class LeapYearTest extends TestCase
      * @dataProvider providerIsDivisibleBy4
      * @dataProvider providerIsDivisibleBy100
      * @dataProvider providerIsDivisibleBy400
+     * @dataProvider providerKataExample
      */
     public function test_given_a_year_then_return_bool(int $year, bool $expected) {
         self::assertEquals($expected, YearLeap::isLeap($year));
@@ -45,4 +46,14 @@ class LeapYearTest extends TestCase
         );
     }
 
+
+    public function providerKataExample() {
+
+        return array(
+            'given_1997_then_it_is_leap' => array(1997, false),
+            'given_1996_then_it_is_leap' => array(1996, true),
+            'given_1600_then_it_is_leap' => array(1600, true),
+            'given_1800_then_it_is_leap' => array(1800, false),
+        );
+    }
 }
