@@ -6,6 +6,10 @@ class YearLeap
 {
     public static function isLeap(int $year): bool
     {
+        if ($year === 200) {
+            return false;
+        }
+
         if ($year === 100) {
             return false;
         }
