@@ -10,10 +10,10 @@ class YearLeap
            return false;
        }
 
-        if ($year % 4 === 0) {
+       if ($year % 4 === 0) {
             return true;
-        }
+       }
 
-        return false;
+       return false;
     }
 }
