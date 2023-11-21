@@ -6,15 +6,7 @@ class YearLeap
 {
     public static function isLeap(int $year): bool
     {
-        if ($year === 1200) {
-            return true;
-        }
-
-        if ($year === 800) {
-            return true;
-        }
-
-        if ($year === 400) {
+        if ($year % 400 === 0) {
             return true;
         }
 
