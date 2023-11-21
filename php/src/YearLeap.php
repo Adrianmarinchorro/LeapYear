@@ -6,14 +6,41 @@ class YearLeap
 {
     public static function isLeap(int $year): bool
     {
-       if ($year % 100 === 0 && $year % 400 !== 0) {
+       if (self::isDivisibleBy100($year) && self::isNotDivisibleBy400($year)) {
            return false;
        }
 
-       if ($year % 4 === 0) {
+       if (self::isDivisibleBy4($year)) {
             return true;
        }
 
        return false;
+    }
+
+    /**
+     * @param int $year
+     * @return bool
+     */
+    public static function isDivisibleBy4(int $year): bool
+    {
+        return $year % 4 === 0;
+    }
+
+    /**
+     * @param int $year
+     * @return bool
+     */
+    public static function isDivisibleBy100(int $year): bool
+    {
+        return $year % 100 === 0;
+    }
+
+    /**
+     * @param int $year
+     * @return bool
+     */
+    public static function isNotDivisibleBy400(int $year): bool
+    {
+        return $year % 400 !== 0;
     }
 }
